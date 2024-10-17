@@ -1,0 +1,199 @@
+* {
+margin: 0;
+padding: 0;
+font-family: 'Ubuntu', sans-serif;
+box-sizing: border-box;
+}
+html,
+body {
+width: 100%;
+height: 100%;
+}
+.userprofile{
+    width: 90vw;
+    height: fit-content;
+    padding-top: 6vmax;
+}
+/* Default styles for large screens (desktop) */
+.profile-edit-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .profile-edit-sidebar {
+    width: 25%;
+    background-color: #dadada;
+    color: black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-edit-details {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .profile-edit-image {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+  }
+  
+  .profile-edit-username {
+    margin-top: 10px;
+    font-size: 1.5rem;
+  }
+  
+  .profile-edit-email {
+    color: black;
+  }
+  
+  .profile-edit-menu {
+    margin-top: 20px;
+  }
+  
+  .profile-edit-menu-button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #5b2886;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1rem;
+  }
+  
+  .profile-edit-menu-button:hover {
+    background-color: #702cb5;
+  }
+  
+  .profile-edit-form {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+  }
+  
+  .profile-edit-form h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .profile-edit-form-group {
+    margin-bottom: 20px;
+  }
+  
+  .profile-edit-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+  }
+  
+  .profile-edit-form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .profile-edit-save-button {
+    background-color: #5b2886;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .profile-edit-save-button:hover {
+    background-color: #702cb5;
+  }
+  
+  /* Medium screens (tablets) - @max-width: 768px */
+  @media (max-width: 768px) {
+    .profile-edit-container {
+      flex-direction: column; /* Stack sidebar and form vertically */
+      height: auto; /* Let content define height */
+    }
+  
+    .profile-edit-sidebar {
+      width: 100%; /* Sidebar takes full width */
+      padding: 15px;
+    }
+  
+    .profile-edit-menu-button {
+      font-size: 0.9rem; /* Slightly smaller button text */
+    }
+  
+    .profile-edit-form {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .profile-edit-form-group input {
+      font-size: 0.9rem; /* Adjust input text size */
+    }
+  
+    .profile-edit-save-button {
+      font-size: 0.9rem; /* Adjust button size */
+      padding: 8px 16px;
+    }
+  }
+  
+  /* Small screens (mobile) - @max-width: 480px */
+  @media (max-width: 480px) {
+    .profile-edit-container {
+      flex-direction: column; /* Stack sidebar and form */
+      height: auto;
+    }
+  
+    .profile-edit-sidebar {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .profile-edit-image {
+      width: 100px;
+      height: 100px; /* Reduce profile image size */
+    }
+  
+    .profile-edit-username {
+      font-size: 1.2rem; /* Reduce font size */
+    }
+  
+    .profile-edit-form {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .profile-edit-form-group input {
+      font-size: 0.8rem; /* Adjust input font size */
+      padding: 8px;
+    }
+  
+    .profile-edit-save-button {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  }
+  @media (max-width: 430px) {
+    .profile-edit-sidebar {
+        width: 100%;
+        height: fit-content;
+        padding: 10px;
+      }
+      .userprofile{
+        padding-top: 14vmax;
+        width: 100vw;
+      
+      }
+      .profile-edit-container {
+        flex-direction: column; /* Stack sidebar and form */
+        height: auto;
+        padding: 0;
+      }
+  }

@@ -1,0 +1,333 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  height: 100%;
+  width: 100%;
+}
+.shoppingCart{
+  width: 100%;
+  height: fit-content;
+  padding: 3vmax 4vmax;
+  background-color: #f5f4f4;
+}
+.button{
+  color: white;
+}
+.longBox{
+  width: 85vw;
+  height: fit-content;
+  padding: 1vmax;
+  padding-top: 3vmax;
+  background-color: rgb(255, 255, 255);
+}
+.shoppingItemImg{
+  width: 20%;
+ 
+}
+.shoppingCart h2{
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.719);
+}
+.shoppingCart h2 span{
+  color: black;
+  font-weight: 600;
+}
+.shoppingItemImg img{
+  width: 100%;
+
+  object-fit: cover;
+}
+.shoopingDetails{
+  width: 76%;
+  display: flex;
+  flex-direction: column;
+  gap: 1vmax;
+}
+.shoopingDetails p{
+  color: #9c9a9a;
+}
+.shoopingDetails p > b{
+  color: black;
+}
+.shoopingDetails h3{
+font-weight: 600;
+}
+.shoopingDetails span{
+  color: white;
+}
+
+.longBox h1{
+  font-weight: 500;
+}
+.shoopingDetails a{
+  color: rgb(0, 123, 255);
+  font-size: .8rem;
+}
+.line{
+  width: 100%;
+  height: 1px;
+  background-color: #dddddd;
+  margin-top: 1vmax;
+}
+.itemsList{
+  width: 100%;
+  /* height: 30vh; */
+  margin-top: 1vmax;
+display: flex;
+  
+}
+.billContainer{
+  width: 100%;
+  margin-top: 1vmax;
+  display: flex;
+  flex-direction: column;
+  gap: .5vmax;
+}
+.payrap{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.button2 {
+  position: relative;
+  width: 150px;
+  /* height: 40px; */
+  cursor: pointer;
+  display: flex;
+  border-radius: 7px;
+  overflow: hidden;
+  color: white;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1vmax;
+  justify-content: center;
+  border: 1px solid #34974d;
+  background-color: #3aa856;
+}
+
+.button2 .button__text {
+  color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.button__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.button__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.svg {
+  width: 24px;
+  height: 24px;
+  stroke: #fff;
+}
+
+.button:hover {
+  background: #34974d;
+}
+
+.button:active .button__icon {
+  background-color: #2e8644;
+}
+
+.button:active {
+  border: 1px solid #2e8644;
+}
+
+@media screen and (max-width: 430px) {
+  .itemsList{
+ width: unset;
+  }
+  .shoppingItemImg{
+    width: 100%;
+   
+  }
+  .shoopingDetails{
+    width: 100%;
+    /* display: flex;
+    flex-direction: column; */
+    gap: 1vmax;
+  }
+  .shoopingDetails p{
+    display: none;
+  }
+  .shoppingCart{
+   padding: 0;
+   padding-top: 15vmax;
+  }
+  .longBox{
+    width: 100vw;
+    height: fit-content;
+    padding: 1vmax;
+    background-color: rgb(255, 255, 255);
+  }
+  
+}
+/* PopupModal.css */
+
+/* Wrapper to center the open button */
+.popup-modal-wrapper {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Button to open the modal */
+.popup-modal__open-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Dark overlay background */
+.popup-modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Popup modal content */
+.popup-modal__content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  height: fit-content;
+  text-align: center;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Close button (X) */
+.popup-modal__close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Adjust content within modal */
+.popup-modal__content h2 {
+  margin-bottom: 15px;
+}
+
+.popup-modal__content p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .popup-modal__content {
+    width: 90%;
+    padding: 15px;
+  }
+}
+
+/* AddressForm.css */
+
+.address-form-container {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.address-form__title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.address-form__label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.address-form__input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.address-form__checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.address-form__checkbox input {
+  margin-right: 10px;
+}
+
+.address-form__submit-btn {
+  width: 100%;
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: #2e8644;
+}
+
+.address-form__submit-btn:hover {
+  background-color: #3aa856;
+
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .address-form-container {
+    padding: 15px;
+  }
+
+  .address-form__title {
+    font-size: 1.5rem;
+  }
+
+  .address-form__input {
+    padding: 8px;
+  }
+
+  .address-form__submit-btn {
+    font-size: 1rem;
+    padding: 8px;
+  }
+}
