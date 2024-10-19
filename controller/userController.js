@@ -2,6 +2,10 @@ const UserSchema = require("../models/userModel");
 const productSchema = require("../models/productModel");
 const { sendtoken } = require("../utils/sendToken");
 const { catchAsyncErrors } = require("../middleware/catchAsyncErrors");
+// add by suraj for payment gatway
+// const express = require('express');
+const Razorpay = require('razorpay');
+// const router = express.Router();
 
 exports.deleteCollection = async (req, res) => {
   await UserSchema.deleteMany();
@@ -184,6 +188,34 @@ exports.get_address = async (req, res) => {
     })
     .catch((error) => console.error("Error:", error));
 };
+
+
+// Initialize Razorpay instance with your API key and secret
+
+
+exports.create_order= async (req, res) => {
+  const { amount } = req.body;
+  const razorpay = new Razorpay({
+    key_id: 'your_key_id', // Replace with your Razorpay Key ID
+    key_secret: 'your_key_secret', // Replace with your Razorpay Secret
+  });
+  try {
+    const options = {
+      amount: amount * 100, // Amount in paise
+      currency: 'INR',
+      receipt: `receipt_${Date.now()}`,
+    };
+
+    const order = await razorpay.orders.create(options);
+    res.status(200).json(order);
+  } catch (error) {
+    res.status(500).json({ message: 'Something went wrong' });
+  }
+}
+
+
+
+
 function generateOTP() {
   const digits = "0123456789";
   let otp = "";
@@ -196,3 +228,4 @@ function generateOTP() {
   if (otp.length == 4) return otp;
   generateOTP();
 }
+

@@ -10,7 +10,8 @@ const {
   verifyotp,
   logout,
   getUserDetails,
-  single_product
+  single_product,
+  create_order
 } = require("../controller/userController");
 const { isAuthenticated } = require("../middleware/auth");
 const router = express.Router();
@@ -30,5 +31,7 @@ router.put("/get_address", get_address);
 router.post("/login", login);
 router.post("/otp", verifyotp);
 router.post("/add_cart", add_cart);
+router.post("/create_order", create_order);
+
 
 module.exports = router;
