@@ -9,12 +9,12 @@ self.addEventListener('install', (event) => {
                 '/@vite/client',
                 '/public/icons/vite.svg',
                 '/src/index.css',
-                '/public/manifest.webmanifest',
+                '/public/manifest.json',
                 '/public/index.html',
-                '/src/components/login.css',
-                '/src/components/login.jsx',
-                '/src/components/signup.css',
-                '/src/components/signup.jsx',
+                '/login.css',
+                '/login.jsx',
+                '/signup.css',
+                '/signup.jsx',
                 '/src/App.jsx',
                 '/src/Axios.jsx',
                 '/src/index.jsx',
@@ -49,7 +49,20 @@ self.addEventListener('fetch', (event) => {
   
     event.respondWith(
         caches.match(event.request).then((response) => {
-            return response || fetch(event.request).catch(() => caches.match('/main.jsx'));
+            return response || fetch(event.request).catch(() => caches.match('/index.jsx'));
         })
     );
 });
+
+
+
+
+
+
+
+
+
+
+
+
+

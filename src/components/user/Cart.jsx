@@ -39,11 +39,49 @@ const Cart = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Form Data Submitted:', formData);
     alert('Address Saved!');
+  
+    // Call backend API to create Razorpay order
+    const response = await fetch('http://localhost:4000/create-order', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        amount: 250, // Example amount
+      }),
+    });
+  
+    const orderData = await response.json();
+  
+    // Initialize Razorpay Payment
+    const options = {
+      key: 'your_key_id', // Replace with your Razorpay Key ID
+      amount: orderData.amount,
+      currency: 'INR',
+      name: 'Your Store',
+      description: 'Test Transaction',
+      order_id: orderData.id,
+      handler: function (response) {
+        alert(`Payment Successful. Payment ID: ${response.razorpay_payment_id}`);
+      },
+      prefill: {
+        name: formData.fullName,
+        contact: formData.contactNo,
+        email: 'test@example.com', // Optional
+      },
+      theme: {
+        color: '#3399cc',
+      },
+    };
+  
+    const rzp = new window.Razorpay(options);
+    rzp.open();
   };
+  
   return (
     <div>
       <div className="shoppingCart">
